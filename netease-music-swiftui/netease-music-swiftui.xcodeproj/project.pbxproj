@@ -1,0 +1,746 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE4A2C092954931000B4D1CC /* PlayPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A2C082954931000B4D1CC /* PlayPageView.swift */; };
+		EEC05D75294D6ABA0078C798 /* netease_music_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05D74294D6ABA0078C798 /* netease_music_swiftuiApp.swift */; };
+		EEC05D79294D6ABC0078C798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC05D78294D6ABC0078C798 /* Assets.xcassets */; };
+		EEC05D7C294D6ABC0078C798 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC05D7B294D6ABC0078C798 /* Preview Assets.xcassets */; };
+		EEC05D86294D6ABD0078C798 /* netease_music_swiftuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05D85294D6ABD0078C798 /* netease_music_swiftuiTests.swift */; };
+		EEC05D90294D6ABD0078C798 /* netease_music_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05D8F294D6ABD0078C798 /* netease_music_swiftuiUITests.swift */; };
+		EEC05D92294D6ABD0078C798 /* netease_music_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05D91294D6ABD0078C798 /* netease_music_swiftuiUITestsLaunchTests.swift */; };
+		EEC05DA1294EBC640078C798 /* ColorConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05D9F294EBC640078C798 /* ColorConst.swift */; };
+		EEC05DA2294EBC640078C798 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DA0294EBC640078C798 /* Const.swift */; };
+		EEC05DA7294EBF250078C798 /* FindPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DA6294EBF250078C798 /* FindPageView.swift */; };
+		EEC05DA9294EBF560078C798 /* FindNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DA8294EBF560078C798 /* FindNavView.swift */; };
+		EEC05DAD294EBFB60078C798 /* VSStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DAC294EBFB60078C798 /* VSStack.swift */; };
+		EEC05DB1294EF7470078C798 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DB0294EF7470078C798 /* View+Extension.swift */; };
+		EEC05DB9294F04410078C798 /* ACarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DB4294F04410078C798 /* ACarouselViewModel.swift */; };
+		EEC05DBA294F04410078C798 /* ACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DB5294F04410078C798 /* ACarousel.swift */; };
+		EEC05DBB294F04410078C798 /* View+ReceiveTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DB6294F04410078C798 /* View+ReceiveTimer.swift */; };
+		EEC05DBC294F04410078C798 /* ACarouselAutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DB7294F04410078C798 /* ACarouselAutoScroll.swift */; };
+		EEC05DBD294F04410078C798 /* AppLifeCycleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DB8294F04410078C798 /* AppLifeCycleModifier.swift */; };
+		EEC05DC2294F33090078C798 /* FindSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DC1294F33090078C798 /* FindSectionView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EEC05D82294D6ABD0078C798 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEC05D69294D6ABA0078C798 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEC05D70294D6ABA0078C798;
+			remoteInfo = "netease-music-swiftui";
+		};
+		EEC05D8C294D6ABD0078C798 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEC05D69294D6ABA0078C798 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEC05D70294D6ABA0078C798;
+			remoteInfo = "netease-music-swiftui";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EE4A2C082954931000B4D1CC /* PlayPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPageView.swift; sourceTree = "<group>"; };
+		EE4A2C0A2954944D00B4D1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EEC05D71294D6ABA0078C798 /* netease-music-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "netease-music-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC05D74294D6ABA0078C798 /* netease_music_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netease_music_swiftuiApp.swift; sourceTree = "<group>"; };
+		EEC05D78294D6ABC0078C798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEC05D7B294D6ABC0078C798 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EEC05D81294D6ABD0078C798 /* netease-music-swiftuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "netease-music-swiftuiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC05D85294D6ABD0078C798 /* netease_music_swiftuiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netease_music_swiftuiTests.swift; sourceTree = "<group>"; };
+		EEC05D8B294D6ABD0078C798 /* netease-music-swiftuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "netease-music-swiftuiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC05D8F294D6ABD0078C798 /* netease_music_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netease_music_swiftuiUITests.swift; sourceTree = "<group>"; };
+		EEC05D91294D6ABD0078C798 /* netease_music_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netease_music_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EEC05D9F294EBC640078C798 /* ColorConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConst.swift; sourceTree = "<group>"; };
+		EEC05DA0294EBC640078C798 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		EEC05DA6294EBF250078C798 /* FindPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPageView.swift; sourceTree = "<group>"; };
+		EEC05DA8294EBF560078C798 /* FindNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNavView.swift; sourceTree = "<group>"; };
+		EEC05DAC294EBFB60078C798 /* VSStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSStack.swift; sourceTree = "<group>"; };
+		EEC05DB0294EF7470078C798 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		EEC05DB4294F04410078C798 /* ACarouselViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarouselViewModel.swift; sourceTree = "<group>"; };
+		EEC05DB5294F04410078C798 /* ACarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarousel.swift; sourceTree = "<group>"; };
+		EEC05DB6294F04410078C798 /* View+ReceiveTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ReceiveTimer.swift"; sourceTree = "<group>"; };
+		EEC05DB7294F04410078C798 /* ACarouselAutoScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarouselAutoScroll.swift; sourceTree = "<group>"; };
+		EEC05DB8294F04410078C798 /* AppLifeCycleModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifeCycleModifier.swift; sourceTree = "<group>"; };
+		EEC05DC1294F33090078C798 /* FindSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSectionView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEC05D6E294D6ABA0078C798 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC05D7E294D6ABD0078C798 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC05D88294D6ABD0078C798 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE4A2C06295492E000B4D1CC /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				EE4A2C07295492F100B4D1CC /* View */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		EE4A2C07295492F100B4D1CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE4A2C082954931000B4D1CC /* PlayPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEC05D68294D6ABA0078C798 = {
+			isa = PBXGroup;
+			children = (
+				EEC05D73294D6ABA0078C798 /* netease-music-swiftui */,
+				EEC05D84294D6ABD0078C798 /* netease-music-swiftuiTests */,
+				EEC05D8E294D6ABD0078C798 /* netease-music-swiftuiUITests */,
+				EEC05D72294D6ABA0078C798 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEC05D72294D6ABA0078C798 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05D71294D6ABA0078C798 /* netease-music-swiftui.app */,
+				EEC05D81294D6ABD0078C798 /* netease-music-swiftuiTests.xctest */,
+				EEC05D8B294D6ABD0078C798 /* netease-music-swiftuiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEC05D73294D6ABA0078C798 /* netease-music-swiftui */ = {
+			isa = PBXGroup;
+			children = (
+				EE4A2C0A2954944D00B4D1CC /* Info.plist */,
+				EEC05DB2294F03FC0078C798 /* Helper */,
+				EEC05DAF294EF7380078C798 /* Extension */,
+				EEC05DAA294EBFA50078C798 /* Base */,
+				EEC05DA3294EBE5C0078C798 /* Page */,
+				EEC05D74294D6ABA0078C798 /* netease_music_swiftuiApp.swift */,
+				EEC05D9E294EBC640078C798 /* Const */,
+				EEC05D78294D6ABC0078C798 /* Assets.xcassets */,
+				EEC05D7A294D6ABC0078C798 /* Preview Content */,
+			);
+			path = "netease-music-swiftui";
+			sourceTree = "<group>";
+		};
+		EEC05D7A294D6ABC0078C798 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05D7B294D6ABC0078C798 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EEC05D84294D6ABD0078C798 /* netease-music-swiftuiTests */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05D85294D6ABD0078C798 /* netease_music_swiftuiTests.swift */,
+			);
+			path = "netease-music-swiftuiTests";
+			sourceTree = "<group>";
+		};
+		EEC05D8E294D6ABD0078C798 /* netease-music-swiftuiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05D8F294D6ABD0078C798 /* netease_music_swiftuiUITests.swift */,
+				EEC05D91294D6ABD0078C798 /* netease_music_swiftuiUITestsLaunchTests.swift */,
+			);
+			path = "netease-music-swiftuiUITests";
+			sourceTree = "<group>";
+		};
+		EEC05D9E294EBC640078C798 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05D9F294EBC640078C798 /* ColorConst.swift */,
+				EEC05DA0294EBC640078C798 /* Const.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		EEC05DA3294EBE5C0078C798 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				EE4A2C06295492E000B4D1CC /* Play */,
+				EEC05DA4294EBE680078C798 /* Find */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		EEC05DA4294EBE680078C798 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05DBE294F11080078C798 /* Model */,
+				EEC05DAE294EF4D60078C798 /* ViewModel */,
+				EEC05DA5294EBE720078C798 /* View */,
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		EEC05DA5294EBE720078C798 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05DA6294EBF250078C798 /* FindPageView.swift */,
+				EEC05DA8294EBF560078C798 /* FindNavView.swift */,
+				EEC05DC1294F33090078C798 /* FindSectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEC05DAA294EBFA50078C798 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05DAB294EBFAE0078C798 /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EEC05DAB294EBFAE0078C798 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05DAC294EBFB60078C798 /* VSStack.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEC05DAE294EF4D60078C798 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EEC05DAF294EF7380078C798 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05DB0294EF7470078C798 /* View+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EEC05DB2294F03FC0078C798 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05DB3294F04410078C798 /* ACarousel */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		EEC05DB3294F04410078C798 /* ACarousel */ = {
+			isa = PBXGroup;
+			children = (
+				EEC05DB4294F04410078C798 /* ACarouselViewModel.swift */,
+				EEC05DB5294F04410078C798 /* ACarousel.swift */,
+				EEC05DB6294F04410078C798 /* View+ReceiveTimer.swift */,
+				EEC05DB7294F04410078C798 /* ACarouselAutoScroll.swift */,
+				EEC05DB8294F04410078C798 /* AppLifeCycleModifier.swift */,
+			);
+			path = ACarousel;
+			sourceTree = "<group>";
+		};
+		EEC05DBE294F11080078C798 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEC05D70294D6ABA0078C798 /* netease-music-swiftui */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC05D95294D6ABD0078C798 /* Build configuration list for PBXNativeTarget "netease-music-swiftui" */;
+			buildPhases = (
+				EEC05D6D294D6ABA0078C798 /* Sources */,
+				EEC05D6E294D6ABA0078C798 /* Frameworks */,
+				EEC05D6F294D6ABA0078C798 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "netease-music-swiftui";
+			productName = "netease-music-swiftui";
+			productReference = EEC05D71294D6ABA0078C798 /* netease-music-swiftui.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EEC05D80294D6ABD0078C798 /* netease-music-swiftuiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC05D98294D6ABD0078C798 /* Build configuration list for PBXNativeTarget "netease-music-swiftuiTests" */;
+			buildPhases = (
+				EEC05D7D294D6ABD0078C798 /* Sources */,
+				EEC05D7E294D6ABD0078C798 /* Frameworks */,
+				EEC05D7F294D6ABD0078C798 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEC05D83294D6ABD0078C798 /* PBXTargetDependency */,
+			);
+			name = "netease-music-swiftuiTests";
+			productName = "netease-music-swiftuiTests";
+			productReference = EEC05D81294D6ABD0078C798 /* netease-music-swiftuiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EEC05D8A294D6ABD0078C798 /* netease-music-swiftuiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC05D9B294D6ABD0078C798 /* Build configuration list for PBXNativeTarget "netease-music-swiftuiUITests" */;
+			buildPhases = (
+				EEC05D87294D6ABD0078C798 /* Sources */,
+				EEC05D88294D6ABD0078C798 /* Frameworks */,
+				EEC05D89294D6ABD0078C798 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEC05D8D294D6ABD0078C798 /* PBXTargetDependency */,
+			);
+			name = "netease-music-swiftuiUITests";
+			productName = "netease-music-swiftuiUITests";
+			productReference = EEC05D8B294D6ABD0078C798 /* netease-music-swiftuiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEC05D69294D6ABA0078C798 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					EEC05D70294D6ABA0078C798 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					EEC05D80294D6ABD0078C798 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = EEC05D70294D6ABA0078C798;
+					};
+					EEC05D8A294D6ABD0078C798 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = EEC05D70294D6ABA0078C798;
+					};
+				};
+			};
+			buildConfigurationList = EEC05D6C294D6ABA0078C798 /* Build configuration list for PBXProject "netease-music-swiftui" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEC05D68294D6ABA0078C798;
+			productRefGroup = EEC05D72294D6ABA0078C798 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEC05D70294D6ABA0078C798 /* netease-music-swiftui */,
+				EEC05D80294D6ABD0078C798 /* netease-music-swiftuiTests */,
+				EEC05D8A294D6ABD0078C798 /* netease-music-swiftuiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEC05D6F294D6ABA0078C798 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC05D7C294D6ABC0078C798 /* Preview Assets.xcassets in Resources */,
+				EEC05D79294D6ABC0078C798 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC05D7F294D6ABD0078C798 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC05D89294D6ABD0078C798 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEC05D6D294D6ABA0078C798 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC05DA1294EBC640078C798 /* ColorConst.swift in Sources */,
+				EE4A2C092954931000B4D1CC /* PlayPageView.swift in Sources */,
+				EEC05DBD294F04410078C798 /* AppLifeCycleModifier.swift in Sources */,
+				EEC05DAD294EBFB60078C798 /* VSStack.swift in Sources */,
+				EEC05DA7294EBF250078C798 /* FindPageView.swift in Sources */,
+				EEC05DA2294EBC640078C798 /* Const.swift in Sources */,
+				EEC05DA9294EBF560078C798 /* FindNavView.swift in Sources */,
+				EEC05DB1294EF7470078C798 /* View+Extension.swift in Sources */,
+				EEC05DB9294F04410078C798 /* ACarouselViewModel.swift in Sources */,
+				EEC05DBA294F04410078C798 /* ACarousel.swift in Sources */,
+				EEC05DBB294F04410078C798 /* View+ReceiveTimer.swift in Sources */,
+				EEC05DC2294F33090078C798 /* FindSectionView.swift in Sources */,
+				EEC05D75294D6ABA0078C798 /* netease_music_swiftuiApp.swift in Sources */,
+				EEC05DBC294F04410078C798 /* ACarouselAutoScroll.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC05D7D294D6ABD0078C798 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC05D86294D6ABD0078C798 /* netease_music_swiftuiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC05D87294D6ABD0078C798 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC05D92294D6ABD0078C798 /* netease_music_swiftuiUITestsLaunchTests.swift in Sources */,
+				EEC05D90294D6ABD0078C798 /* netease_music_swiftuiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EEC05D83294D6ABD0078C798 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEC05D70294D6ABA0078C798 /* netease-music-swiftui */;
+			targetProxy = EEC05D82294D6ABD0078C798 /* PBXContainerItemProxy */;
+		};
+		EEC05D8D294D6ABD0078C798 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEC05D70294D6ABA0078C798 /* netease-music-swiftui */;
+			targetProxy = EEC05D8C294D6ABD0078C798 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EEC05D93294D6ABD0078C798 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EEC05D94294D6ABD0078C798 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEC05D96294D6ABD0078C798 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"netease-music-swiftui/Preview Content\"";
+				DEVELOPMENT_TEAM = K7R22LX2WQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "netease-music-swiftui/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myself.netease-music-swiftui";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEC05D97294D6ABD0078C798 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"netease-music-swiftui/Preview Content\"";
+				DEVELOPMENT_TEAM = K7R22LX2WQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "netease-music-swiftui/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myself.netease-music-swiftui";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EEC05D99294D6ABD0078C798 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K7R22LX2WQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myself.netease-music-swiftuiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/netease-music-swiftui.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/netease-music-swiftui";
+			};
+			name = Debug;
+		};
+		EEC05D9A294D6ABD0078C798 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K7R22LX2WQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myself.netease-music-swiftuiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/netease-music-swiftui.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/netease-music-swiftui";
+			};
+			name = Release;
+		};
+		EEC05D9C294D6ABD0078C798 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K7R22LX2WQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myself.netease-music-swiftuiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "netease-music-swiftui";
+			};
+			name = Debug;
+		};
+		EEC05D9D294D6ABD0078C798 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K7R22LX2WQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myself.netease-music-swiftuiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "netease-music-swiftui";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEC05D6C294D6ABA0078C798 /* Build configuration list for PBXProject "netease-music-swiftui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC05D93294D6ABD0078C798 /* Debug */,
+				EEC05D94294D6ABD0078C798 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC05D95294D6ABD0078C798 /* Build configuration list for PBXNativeTarget "netease-music-swiftui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC05D96294D6ABD0078C798 /* Debug */,
+				EEC05D97294D6ABD0078C798 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC05D98294D6ABD0078C798 /* Build configuration list for PBXNativeTarget "netease-music-swiftuiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC05D99294D6ABD0078C798 /* Debug */,
+				EEC05D9A294D6ABD0078C798 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC05D9B294D6ABD0078C798 /* Build configuration list for PBXNativeTarget "netease-music-swiftuiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC05D9C294D6ABD0078C798 /* Debug */,
+				EEC05D9D294D6ABD0078C798 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEC05D69294D6ABA0078C798 /* Project object */;
+}
