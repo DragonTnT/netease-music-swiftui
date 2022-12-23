@@ -11,7 +11,7 @@ import SwiftUI
 struct netease_music_swiftuiApp: App {
     var body: some Scene {
         WindowGroup {
-            FindPageView()
+            PlayPageView()
         }
     }
 }

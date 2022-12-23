@@ -27,4 +27,10 @@ extension View {
              return clipShape(roundedRect)
                   .overlay(roundedRect.strokeBorder(content, lineWidth: width))
     }
+    
+    // 设置宽高相等的边长
+    func sideLength(_ length: CGFloat) -> some View {
+        return self.frame(width: length, height: length)
+    }
+    
 }
