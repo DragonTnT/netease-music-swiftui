@@ -30,13 +30,34 @@ struct Music {
 
 /// 通过音乐id获取网络播放地址
 /// /song/url?id=347230
-/// 音乐地址，
-struct MusicAddress {
+/// 音乐播放信息
+struct MusicPlayInfo {
+    /// 播放地址
     let url: String
+    /// 码率
+//    let br: Int
+    /// 大小，单位Byte
+//    let size: Int
+    /// 时长，单位毫秒
+    let time: Int
+    
+    /// 结束时间的文本显示
+    var endTimeString = "00:00"
 }
 
 /// 通过音乐id获取音乐的下载地址（目前url获取为空，不知是否因为未登录）
 /// song/download/url?id=347230
 struct MusicDownload {
     let url: String
+}
+
+
+/// 音乐播放完成后的操作类型
+enum MusicCompletedType {
+    /// 循环播放
+    case cycle
+    /// 播放下一首
+    case next
+    /// 暂停
+    case pause
 }

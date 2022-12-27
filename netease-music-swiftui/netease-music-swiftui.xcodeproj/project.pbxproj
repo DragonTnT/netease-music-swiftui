@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06A20D8D295AD50C00CEF205 /* PausableRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A20D8C295AD50C00CEF205 /* PausableRotation.swift */; };
+		06D99F1229594FD80018FA5E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D99F1129594FD80018FA5E /* Int+Extension.swift */; };
 		06FF70C1295548AF00C4AB52 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF70C0295548AF00C4AB52 /* Image+Extension.swift */; };
 		06FF70C42955508700C4AB52 /* PlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF70C32955508700C4AB52 /* PlayViewModel.swift */; };
 		06FF70C729557FE900C4AB52 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06FF70C629557FE900C4AB52 /* song.mp3 */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06A20D8C295AD50C00CEF205 /* PausableRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausableRotation.swift; sourceTree = "<group>"; };
+		06D99F1129594FD80018FA5E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		06FF70C0295548AF00C4AB52 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		06FF70C32955508700C4AB52 /* PlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewModel.swift; sourceTree = "<group>"; };
 		06FF70C629557FE900C4AB52 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				EE4A2C082954931000B4D1CC /* PlayPageView.swift */,
+				06A20D8C295AD50C00CEF205 /* PausableRotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 			children = (
 				EEC05DB0294EF7470078C798 /* View+Extension.swift */,
 				06FF70C0295548AF00C4AB52 /* Image+Extension.swift */,
+				06D99F1129594FD80018FA5E /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -587,6 +593,7 @@
 				06FF70C42955508700C4AB52 /* PlayViewModel.swift in Sources */,
 				EEC05DA1294EBC640078C798 /* ColorConst.swift in Sources */,
 				EE4A2C092954931000B4D1CC /* PlayPageView.swift in Sources */,
+				06D99F1229594FD80018FA5E /* Int+Extension.swift in Sources */,
 				EEC05DBD294F04410078C798 /* AppLifeCycleModifier.swift in Sources */,
 				EEC05DAD294EBFB60078C798 /* VSStack.swift in Sources */,
 				EEC05DA7294EBF250078C798 /* FindPageView.swift in Sources */,
@@ -598,6 +605,7 @@
 				EEC05DB9294F04410078C798 /* ACarouselViewModel.swift in Sources */,
 				EEC05DBA294F04410078C798 /* ACarousel.swift in Sources */,
 				EEC05DBB294F04410078C798 /* View+ReceiveTimer.swift in Sources */,
+				06A20D8D295AD50C00CEF205 /* PausableRotation.swift in Sources */,
 				EEC05DC2294F33090078C798 /* FindSectionView.swift in Sources */,
 				EEC05D75294D6ABA0078C798 /* netease_music_swiftuiApp.swift in Sources */,
 				EEC05DBC294F04410078C798 /* ACarouselAutoScroll.swift in Sources */,
