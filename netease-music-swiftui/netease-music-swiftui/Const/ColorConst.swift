@@ -87,3 +87,5 @@ let Color_E53620 = hexColor("E53620")
 
 let grayTextColor = Color.init(red: 124/255.0, green: 130/255.0, blue: 145/255.0)
 
+// 默认主题红
+let defaultRedColor = hexColor("d81e06")

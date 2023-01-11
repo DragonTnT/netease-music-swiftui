@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0695E0E3296CFD1F00C3E152 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695E0E2296CFD1F00C3E152 /* DataBaseManager.swift */; };
+		0695E0E9296D2FA800C3E152 /* FloatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695E0E8296D2FA800C3E152 /* FloatView.swift */; };
+		0695E0EB296D4E5B00C3E152 /* demoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695E0EA296D4E5B00C3E152 /* demoUI.swift */; };
 		06A20D8D295AD50C00CEF205 /* PausableRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A20D8C295AD50C00CEF205 /* PausableRotation.swift */; };
 		06D99F1229594FD80018FA5E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D99F1129594FD80018FA5E /* Int+Extension.swift */; };
 		06FF70C1295548AF00C4AB52 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF70C0295548AF00C4AB52 /* Image+Extension.swift */; };
 		06FF70C42955508700C4AB52 /* PlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF70C32955508700C4AB52 /* PlayViewModel.swift */; };
-		06FF70C729557FE900C4AB52 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06FF70C629557FE900C4AB52 /* song.mp3 */; };
 		06FF70CC2955976F00C4AB52 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF70CB2955976F00C4AB52 /* Music.swift */; };
 		3E563818A714DF2F9326FD19 /* Pods_netease_music_swiftuiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AEA63C94AD754E620E1EAC /* Pods_netease_music_swiftuiTests.framework */; };
 		896A371B407CBD11B21F2CDD /* Pods_netease_music_swiftui_netease_music_swiftuiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B615A2BBBFA0CD90CD12D7 /* Pods_netease_music_swiftui_netease_music_swiftuiUITests.framework */; };
@@ -55,11 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0695E0E2296CFD1F00C3E152 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		0695E0E8296D2FA800C3E152 /* FloatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatView.swift; sourceTree = "<group>"; };
+		0695E0EA296D4E5B00C3E152 /* demoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoUI.swift; sourceTree = "<group>"; };
 		06A20D8C295AD50C00CEF205 /* PausableRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausableRotation.swift; sourceTree = "<group>"; };
 		06D99F1129594FD80018FA5E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		06FF70C0295548AF00C4AB52 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		06FF70C32955508700C4AB52 /* PlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewModel.swift; sourceTree = "<group>"; };
-		06FF70C629557FE900C4AB52 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
 		06FF70CB2955976F00C4AB52 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		37FD2792DCE9A5011B531BE4 /* Pods-netease-music-swiftui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-netease-music-swiftui.release.xcconfig"; path = "Target Support Files/Pods-netease-music-swiftui/Pods-netease-music-swiftui.release.xcconfig"; sourceTree = "<group>"; };
 		4C2E7589B67668ACDF1F177B /* Pods-netease-music-swiftuiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-netease-music-swiftuiTests.debug.xcconfig"; path = "Target Support Files/Pods-netease-music-swiftuiTests/Pods-netease-music-swiftuiTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +138,6 @@
 		06FF70C529557FDC00C4AB52 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				06FF70C629557FE900C4AB52 /* song.mp3 */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -293,6 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				EEC05DAC294EBFB60078C798 /* VSStack.swift */,
+				0695E0E8296D2FA800C3E152 /* FloatView.swift */,
+				0695E0EA296D4E5B00C3E152 /* demoUI.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				EEC05DB3294F04410078C798 /* ACarousel */,
+				0695E0E2296CFD1F00C3E152 /* DataBaseManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -462,7 +468,6 @@
 			files = (
 				EEC05D7C294D6ABC0078C798 /* Preview Assets.xcassets in Resources */,
 				EEC05D79294D6ABC0078C798 /* Assets.xcassets in Resources */,
-				06FF70C729557FE900C4AB52 /* song.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,9 +596,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				06FF70C42955508700C4AB52 /* PlayViewModel.swift in Sources */,
+				0695E0E9296D2FA800C3E152 /* FloatView.swift in Sources */,
 				EEC05DA1294EBC640078C798 /* ColorConst.swift in Sources */,
 				EE4A2C092954931000B4D1CC /* PlayPageView.swift in Sources */,
+				0695E0EB296D4E5B00C3E152 /* demoUI.swift in Sources */,
 				06D99F1229594FD80018FA5E /* Int+Extension.swift in Sources */,
+				0695E0E3296CFD1F00C3E152 /* DataBaseManager.swift in Sources */,
 				EEC05DBD294F04410078C798 /* AppLifeCycleModifier.swift in Sources */,
 				EEC05DAD294EBFB60078C798 /* VSStack.swift in Sources */,
 				EEC05DA7294EBF250078C798 /* FindPageView.swift in Sources */,

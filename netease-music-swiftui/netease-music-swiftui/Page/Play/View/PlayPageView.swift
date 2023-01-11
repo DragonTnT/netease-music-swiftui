@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import Alamofire
 import Kingfisher
+import ExytePopupView
 
 struct PlayPageView: View {
     
@@ -35,11 +36,11 @@ struct PlayPageView: View {
         let drag = DragGesture()
             .onChanged({ dragValue in
                 let progress = dragValue.location.x/progressWidth
-                vm.updatePlayProgress(progress)
+                vm.updateAtProgress(progress)
             })
             .onEnded({ dragValue in
                 let progress = dragValue.location.x/progressWidth
-                vm.playAtProgress(progress)
+                vm.dragToPlayAtProgress(progress)
             })
         
         let combine = longPress.sequenced(before: drag)
@@ -53,11 +54,10 @@ struct PlayPageView: View {
     }
     
     var body: some View {
-            ZStack(alignment: .center) {
+        ZStack(alignment: .center) {
                 // 封面
-                // FIXME_Allen:  宽高*1.2后，会造成ZStack大于屏幕，思考如果使图像放大，但不改变frame，考虑使用.transition方法
-                KFImage.url(URL(string: vm.music.al.picUrl))
-                    .resizing(referenceSize: CGSize(width: kScreenW * 1.2, height: kScreenH * 1.2), mode: .aspectFill)
+                KFImage.url(URL(string: vm.music.albumPicUrl))
+                .resizing(referenceSize: CGSize(width: kScreenW, height: kScreenH), mode: .aspectFill)
                     .blur(radius: 50)
 
                 VStack(spacing: 0) {
@@ -70,7 +70,7 @@ struct PlayPageView: View {
                             Text(vm.music.name)
                                 .font(.system(size: 18))
                                 .foregroundColor(.white)
-                            Text(vm.music.ar.name)
+                            Text(vm.music.authorName)
                                 .font(.system(size: 15))
                                 .foregroundColor(.white)
                                 .opacity(0.5)
@@ -93,7 +93,7 @@ struct PlayPageView: View {
                             ZStack {
                                 Image("play_disc")
                                     .resize(length: discWidth)
-                                KFImage(URL(string: vm.music.al.picUrl))
+                                KFImage(URL(string: vm.music.albumPicUrl))
                                     .resizing(referenceSize: CGSize(width: discWidth - discThickness * 2, height: discWidth - discThickness * 2))
                                     .cornerRadius((discWidth - discThickness * 2)/2.0)
                             }
@@ -117,8 +117,14 @@ struct PlayPageView: View {
                             Image("play_like")
                             Spacer()
                             Image("play_download")
+                                .onTapGesture {
+                                    vm.tapDownload()
+                                }
                             Spacer()
                             Image("play_comment")
+                                .onTapGesture {
+                                    vm.getMusic()
+                                }
                         }.frame(width: kScreenW - 40)
                         // 进度条
                         ZStack {
@@ -172,7 +178,7 @@ struct PlayPageView: View {
                                 .onTapGesture {
                                     vm.didTapPlay()
                                 }
-                                .onReceive(vm.$isPlaying) { isPlaying in                                    
+                                .onReceive(vm.$isPlaying) { isPlaying in
                                     // 杆儿动画
                                     withAnimation(.linear(duration: 0.3)) {
                                         rotationDegrees = isPlaying ? 0 : -30
@@ -190,31 +196,26 @@ struct PlayPageView: View {
                     }
                     .padding(.bottom, 30)
                 }
-                .padding(.horizontal, kScreenW * 0.1)
-                .padding(.vertical, kScreenH * 0.1)
-                .padding(.top, -8)
-            }.ignoresSafeArea()
-    }
-    
-    
-    func loadSong() {
-        let url = "http://localhost:3000/song/download/url?id=347230"
+            }
+            .popup(isPresented: $vm.isStartDownloading) {
+                FloatView(text: "已加入下载列表。")
+            } customize: {
+                $0
+                    .type(.floater())
+                    .position(.top)
+                    .animation(.spring())
+                    .dismissSourceCallback {_ in
+                        vm.isStartDownloading = false
+                    }
+                    .autohideIn(2)
+            }
+            .ignoresSafeArea()
 
-//        let destination: DownloadRequest.Destination = { _, _ in
-//            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//            let fileURL = documentsURL.appendingPathComponent("song.mp3")
-//
-//            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-//        }
-//
-//        AF.download(url, to: destination).response { response in
-//            debugPrint(response)
-//            debugPrint(response.fileURL)
-//        }
-        AF.request(url).response { response in
-            debugPrint(response)
-        }
+
+            
+
     }
+    
 }
 
 struct PlayPageView_Previews: PreviewProvider {

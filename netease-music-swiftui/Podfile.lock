@@ -1,20 +1,37 @@
 PODS:
   - Alamofire (5.6.4)
+  - ExytePopupView (2.0.0)
   - Kingfisher (7.4.1)
+  - SQLiteRepairKit (1.2.2):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDB.swift (1.0.8.2):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
 
 DEPENDENCIES:
   - Alamofire
+  - ExytePopupView (= 2.0.0)
   - Kingfisher
+  - WCDB.swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ExytePopupView
     - Kingfisher
+    - SQLiteRepairKit
+    - WCDB.swift
+    - WCDBOptimizedSQLCipher
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  ExytePopupView: a74fe94599d99d2ae205a1fde04af211041a242c
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 7c15d2d9207a136648e8f14ea63dca83a31dcd62
+PODFILE CHECKSUM: 1f05e345bd11b4ce6c918c5b8ad67e6201fa9964
 
 COCOAPODS: 1.11.3

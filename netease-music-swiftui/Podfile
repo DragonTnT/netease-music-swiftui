@@ -8,6 +8,8 @@ target 'netease-music-swiftui' do
   # Pods for netease-music-swiftui
   pod 'Alamofire'  
   pod 'Kingfisher'
+  pod 'WCDB.swift'
+  pod 'ExytePopupView', '2.0.0'
 
   target 'netease-music-swiftuiTests' do
     inherit! :search_paths

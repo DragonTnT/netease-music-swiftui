@@ -1,6 +1,0 @@
-framework module Pods_netease_music_swiftuiTests {
-  umbrella header "Pods-netease-music-swiftuiTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

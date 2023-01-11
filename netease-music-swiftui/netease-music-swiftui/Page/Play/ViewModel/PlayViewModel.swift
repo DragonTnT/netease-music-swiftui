@@ -8,11 +8,16 @@
 import Foundation
 import Combine
 import AVFoundation
+import Alamofire
+import WCDBSwift
 
 class PlayViewModel: NSObject, ObservableObject {
     
     /// 是否正在播放
     @Published var isPlaying = false
+    
+    /// 是否已开始下载
+    @Published var isStartDownloading = false
     
     /// 播放进度
     @Published var playProgress: Double = 0
@@ -26,14 +31,12 @@ class PlayViewModel: NSObject, ObservableObject {
     /// 总共播放时间的文本
     @Published var totalTimeString: String = "00:00"
     
-    @Published var music = Music(name: "海阔天空", id: 347230, ar: Music.Author(name: "Beyond"), al: Music.Album(id: 11127, name: "海阔天空", picUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F7c09bbf54f9b8510b6ce6cd3e607c227773453fe6c084-vAnHp7_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1674704017&t=8a49d50a33e6fd8e52e3c0dbe6d95484"))
+    @Published var music = NewMusic()
     
     /// 播放器进度条是否被按住
     var progressIsPressing = false
     
-    let playInfo = MusicPlayInfo(url: "https://m704.music.126.net/20221227182855/411e6fb15cc4cab56b6cbbefa5eb1ed8/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/16160625029/3114/1623/5555/5d2a62fa9bf57d85d7279c63c6aa614d.mp3?_=000001855309e33e08310aaba050e6ee", time: 0)
     
-    let playInfo1 = MusicPlayInfo(url: "https://m804.music.126.net/20221227182927/43f4c5c18220be0be37669d192a5f2b5/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/11482710326/881e/f899/dce3/ec698e5372319da2a97bc388f5165642.mp3?_=00000185530a6187125a0aa46364259b", time: 0)
     
     /// 是否已准备好播放
     private var isPreparedToPlay = false
@@ -63,7 +66,13 @@ class PlayViewModel: NSObject, ObservableObject {
     override init() {
         super.init()
         // TODO_Allen: 未加载好之前，有一个统一的UI
-        prepareToPlay(playInfo: playInfo)
+        let music = NewMusic(name: "海阔天空",
+                             id: 347230,
+                             authorName: "Beyond",
+                                            albumPicUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F7c09bbf54f9b8510b6ce6cd3e607c227773453fe6c084-vAnHp7_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1674704017&t=8a49d50a33e6fd8e52e3c0dbe6d95484",
+                                            playUrl: "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-76e6f208-1db3-413f-88bc-80e5e2ac3283/cded1a8b-79d8-43ac-84f2-3945b62815ae.mp3")
+        
+        prepareToPlay(music: music)
     }
     
     func didTapPlay() {
@@ -80,8 +89,9 @@ class PlayViewModel: NSObject, ObservableObject {
         }
     }
     
-    private func prepareToPlay(playInfo: MusicPlayInfo) {
-        guard let url = URL(string: playInfo.url) else { return }
+    private func prepareToPlay(music: NewMusic) {
+        self.music = music
+        guard let url = URL(string: music.playUrl) else { return }
         playerItem = AVPlayerItem(url: url)
         
         playerItem.addObserver(self,
@@ -102,7 +112,7 @@ class PlayViewModel: NSObject, ObservableObject {
             } else {
                 progress = time.seconds / self.musicDuration
             }
-            self.updatePlayProgress(progress)
+            self.updateAtProgress(progress)
         })
     }
     
@@ -146,8 +156,6 @@ class PlayViewModel: NSObject, ObservableObject {
                 // Player item is ready to play.
                 isPreparedToPlay = true
                 musicDuration = CMTimeGetSeconds(self.playerItem.duration)
-                print(self.playerItem.seekableTimeRanges)
-                print(self.playerItem.loadedTimeRanges)
             case .failed:
                 // Player item failed. See error.
                 print("status failed")
@@ -163,25 +171,27 @@ class PlayViewModel: NSObject, ObservableObject {
     /// 进度条和时间更新到某进度
     /// - Parameters:
     ///   - progress: 进度
-    func updatePlayProgress(_ progress: Double) {
+    func updateAtProgress(_ progress: Double) {
         var progress = progress
-        
         if progress < 0 { progress = 0 }
         if progress >= 0.999 {
             if !progressIsPressing {
                 playCompleted()
+                return
             } else {
                 progress = 1
             }
         }
-        // TODO_Allen: progress为1时，播放结束
-//        print(progress)
         self.playProgress = progress
         self.currentTimeString = Int(progress * musicDuration).secondToMusicTimeString()
     }
     
-    /// 播放到某进度
-    func playAtProgress(_ progress: Double) {
+    /// 拖动进度条到某一进度播放
+    func dragToPlayAtProgress(_ progress: Double) {
+        if progress >= 1 {
+            playCompleted()
+            return
+        }
         let time = CMTimeMakeWithSeconds(musicDuration * progress, preferredTimescale: timeScale)
         player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero) { _ in
             self.progressIsPressing = false
@@ -204,8 +214,8 @@ class PlayViewModel: NSObject, ObservableObject {
             }
             
             // FIXME_Allen:  进度更新为0后，进度条依然显示在结束位置
-            updatePlayProgress(0)
-            prepareToPlay(playInfo: playInfo1)
+            updateAtProgress(0)
+            prepareToPlay(music: music2)
         case .pause:
             isPlaying = false
             playerItem.seek(to: .zero, toleranceBefore: .zero, toleranceAfter: .zero) { _ in
@@ -213,6 +223,54 @@ class PlayViewModel: NSObject, ObservableObject {
             }
         }
     }
+    
+    func tapDownload() {
+        isStartDownloading = true
+//        if music.isDownloaded {
+//
+//        } else {
+//            isStartDownloading = true
+//
+//            AF.download(music.playUrl).responseData { resp in
+//                guard let data = resp.value else {
+//                    debugPrint("下载失败")
+//                    return
+//                }
+//                self.music.data = data
+//                self.saveMusicToDataBase(music: self.music)
+//            }
+//        }
+    }
+    
+    func playPrevious() {
+        
+    }
+    
+    func playNext() {
+        
+    }
+    
+    func saveMusicToDataBase(music: NewMusic) {
+        print(DatabaseHelper.dataBasePath)
+        let database = Database(withPath: DatabaseHelper.dataBasePath)
+        do {
+            try database.create(table: DatabaseHelper.musicTableName, of: NewMusic.self)
+            try database.insertOrReplace(objects: music, intoTable: DatabaseHelper.musicTableName)
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func getMusic() {
+        let dataBase = Database(withPath: DatabaseHelper.dataBasePath)
+        do {
+            let objs: [NewMusic] = try dataBase.getObjects(fromTable: DatabaseHelper.musicTableName)
+            print(objs)
+        } catch let error {
+            print(error)
+        }
+    }
+    
     // 加载本地的歌曲
 //    func loadLocalSong() {
 //        let songPath = Bundle.main.path(forResource: "song", ofType: "mp3")!
@@ -227,4 +285,16 @@ class PlayViewModel: NSObject, ObservableObject {
 fileprivate let loaddeTimeRangeKeyPath = "loadedTimeRanges"
 
 // TODO_Allen: AVPlayer播放远端音乐；AVAudioPlayer播放本地音乐
+
+fileprivate let music1 = NewMusic(name: "海阔天空",
+                                  id: 347230,
+                                  authorName: "Beyond",
+                                                 albumPicUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F7c09bbf54f9b8510b6ce6cd3e607c227773453fe6c084-vAnHp7_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1674704017&t=8a49d50a33e6fd8e52e3c0dbe6d95484",
+                                                 playUrl: "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-76e6f208-1db3-413f-88bc-80e5e2ac3283/cded1a8b-79d8-43ac-84f2-3945b62815ae.mp3")
+
+fileprivate let music2 = NewMusic(name: "嘻唰唰",
+                                  id: 347230,
+                                  authorName: "大张伟",
+                                                 albumPicUrl: "https://img0.baidu.com/it/u=441345829,3922263681&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
+                                                 playUrl: "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-76e6f208-1db3-413f-88bc-80e5e2ac3283/f7b5e052-9f56-48b0-aebb-19a3d2b58d56.mp3")
 
