@@ -122,9 +122,6 @@ struct PlayPageView: View {
                                 }
                             Spacer()
                             Image("play_comment")
-                                .onTapGesture {
-                                    vm.getMusic()
-                                }
                         }.frame(width: kScreenW - 40)
                         // 进度条
                         ZStack {

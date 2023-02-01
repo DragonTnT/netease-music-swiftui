@@ -121,7 +121,7 @@ enum MusicCompletedType {
     case pause
 }
 
-class NewMusic: TableCodable {
+class Music: TableCodable {
     
     /// 歌曲名称
     var name = ""
@@ -159,7 +159,7 @@ class NewMusic: TableCodable {
 //    }
     
     enum CodingKeys: String, CodingTableKey {
-        typealias Root = NewMusic
+        typealias Root = Music
         static let objectRelationalMapping = TableBinding(CodingKeys.self)
         case name
         case id
@@ -169,7 +169,7 @@ class NewMusic: TableCodable {
         case data
         case isCollected
         
-        static var columnConstraintBindings: [NewMusic.CodingKeys : ColumnConstraintBinding]? {
+        static var columnConstraintBindings: [Music.CodingKeys : ColumnConstraintBinding]? {
             return [
                 id: ColumnConstraintBinding(isPrimary: true, onConflict: Conflict.replace)
             ]

@@ -31,7 +31,7 @@ class PlayViewModel: NSObject, ObservableObject {
     /// 总共播放时间的文本
     @Published var totalTimeString: String = "00:00"
     
-    @Published var music = NewMusic()
+    @Published var music = Music()
     
     /// 播放器进度条是否被按住
     var progressIsPressing = false
@@ -66,7 +66,7 @@ class PlayViewModel: NSObject, ObservableObject {
     override init() {
         super.init()
         // TODO_Allen: 未加载好之前，有一个统一的UI
-        let music = NewMusic(name: "海阔天空",
+        let music = Music(name: "海阔天空",
                              id: 347230,
                              authorName: "Beyond",
                                             albumPicUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F7c09bbf54f9b8510b6ce6cd3e607c227773453fe6c084-vAnHp7_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1674704017&t=8a49d50a33e6fd8e52e3c0dbe6d95484",
@@ -89,7 +89,7 @@ class PlayViewModel: NSObject, ObservableObject {
         }
     }
     
-    private func prepareToPlay(music: NewMusic) {
+    private func prepareToPlay(music: Music) {
         self.music = music
         guard let url = URL(string: music.playUrl) else { return }
         playerItem = AVPlayerItem(url: url)
@@ -104,6 +104,7 @@ class PlayViewModel: NSObject, ObservableObject {
                                context: &playerItemContext)
         
         player = AVPlayer(playerItem: playerItem)
+
         timeObserverToken = player.addPeriodicTimeObserver(forInterval: timeInterval, queue: nil, using: { time in
             if self.progressIsPressing || !self.isPlaying { return }
             var progress: Double
@@ -225,21 +226,20 @@ class PlayViewModel: NSObject, ObservableObject {
     }
     
     func tapDownload() {
-        isStartDownloading = true
-//        if music.isDownloaded {
-//
-//        } else {
-//            isStartDownloading = true
-//
-//            AF.download(music.playUrl).responseData { resp in
-//                guard let data = resp.value else {
-//                    debugPrint("下载失败")
-//                    return
-//                }
-//                self.music.data = data
-//                self.saveMusicToDataBase(music: self.music)
-//            }
-//        }
+        if music.isDownloaded {
+            
+        } else {
+            isStartDownloading = true
+
+            AF.download(music.playUrl).responseData { resp in
+                guard let data = resp.value else {
+                    debugPrint("下载失败")
+                    return
+                }
+                self.music.data = data
+                self.saveMusicToDataBase(music: self.music)
+            }
+        }
     }
     
     func playPrevious() {
@@ -250,27 +250,26 @@ class PlayViewModel: NSObject, ObservableObject {
         
     }
     
-    func saveMusicToDataBase(music: NewMusic) {
+    func saveMusicToDataBase(music: Music) {
         print(DatabaseHelper.dataBasePath)
         let database = Database(withPath: DatabaseHelper.dataBasePath)
+        
         do {
-            try database.create(table: DatabaseHelper.musicTableName, of: NewMusic.self)
-            try database.insertOrReplace(objects: music, intoTable: DatabaseHelper.musicTableName)
+            try database.create(table: DatabaseHelper.musicTableName, of: Music.self)
+            try database.insertOrReplace(objects: [music], intoTable: DatabaseHelper.musicTableName)
         } catch let error {
             print(error)
         }
     }
     
-    func getMusic() {
-        let dataBase = Database(withPath: DatabaseHelper.dataBasePath)
+    func deleteMusicFromDisk(music: Music) {
+        let database = Database(withPath: DatabaseHelper.dataBasePath)
         do {
-            let objs: [NewMusic] = try dataBase.getObjects(fromTable: DatabaseHelper.musicTableName)
-            print(objs)
+            try database.delete(fromTable: DatabaseHelper.musicTableName, where: Music.Properties.id == music.id)
         } catch let error {
             print(error)
         }
     }
-    
     // 加载本地的歌曲
 //    func loadLocalSong() {
 //        let songPath = Bundle.main.path(forResource: "song", ofType: "mp3")!
@@ -286,13 +285,13 @@ fileprivate let loaddeTimeRangeKeyPath = "loadedTimeRanges"
 
 // TODO_Allen: AVPlayer播放远端音乐；AVAudioPlayer播放本地音乐
 
-fileprivate let music1 = NewMusic(name: "海阔天空",
+fileprivate let music1 = Music(name: "海阔天空",
                                   id: 347230,
                                   authorName: "Beyond",
                                                  albumPicUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F7c09bbf54f9b8510b6ce6cd3e607c227773453fe6c084-vAnHp7_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1674704017&t=8a49d50a33e6fd8e52e3c0dbe6d95484",
                                                  playUrl: "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-76e6f208-1db3-413f-88bc-80e5e2ac3283/cded1a8b-79d8-43ac-84f2-3945b62815ae.mp3")
 
-fileprivate let music2 = NewMusic(name: "嘻唰唰",
+fileprivate let music2 = Music(name: "嘻唰唰",
                                   id: 347230,
                                   authorName: "大张伟",
                                                  albumPicUrl: "https://img0.baidu.com/it/u=441345829,3922263681&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
